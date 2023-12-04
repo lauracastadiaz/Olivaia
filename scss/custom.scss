@@ -1,0 +1,372 @@
+// custom.scss
+
+// Incluir cualquier modificación de las variables por defecto aquí (aunque las funciones no estarán disponibles)
+@import "../node_modules/bootstrap/scss/bootstrap";
+
+
+// Luego se añade código personalizado adicional aquí
+
+//body
+body {
+    background-color: #fff4f4; /* Cambia el color de fondo del cuerpo según tus preferencias */
+    align-items: center;
+}
+
+.container {
+    text-align: center;
+}
+
+//variables
+
+    /*titulos */
+$colortexto: #333;
+$tipotextotitulo: "Garamond";
+$sizetitulo: 50px;
+$fontstyletitulo: normal;
+$fontweight: bold;
+$textalign: center;
+
+    /*parrafos */
+    $tipotexto: "Serifa";
+    $sizetexto: 18px;
+    $fontstyle: normal;
+    $backgroundcolor: #EBCD9D;
+    $colorderesalto: #EAD299;
+    $colorprincipal: #E8DFC7;
+    
+
+//mixin
+
+@mixin titulo {
+    color: $colortexto;
+    font-family: $tipotextotitulo;
+    font-size: $sizetitulo;
+    font-style: $fontstyletitulo;
+    font-weight: $fontweight;
+    text-align: $textalign;
+    margin: 30px 0; /* Margen superior e inferior para separar el título de otros elementos */
+
+}
+
+@mixin subtitulo {
+    font-family: $tipotextotitulo;
+    font-size: 40px;
+    font-weight: $fontweight;
+    color: $colortexto; /* Color del texto */
+    text-align: $textalign;
+    margin: 20px 0; /* Margen superior e inferior para separar el eslogan de otros elementos */
+
+
+}
+
+@mixin parrafo {
+    font-family: $tipotexto;
+    font-size: $sizetexto;
+    font-style: normal;
+    color: $colortexto; /* Color del texto */
+    text-align: justify;
+    margin: 20px 0; /* Margen superior e inferior para separar el eslogan de otros elementos */
+
+}
+
+@mixin boton {
+    background-color: #EBCD9D;
+    color: aliceblue;
+    border: 1px solid $tipotexto;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer; 
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: center;
+    text-decoration: none;
+    background-color: $colorderesalto;
+
+    &:hover{
+        color:#5C3D2E;
+    }
+    
+}
+
+//Estilo para el título principal */
+#titulo {
+   
+    @include titulo;
+  }
+  
+
+  /* Estilo para el eslogan */
+#subtitulo {
+    @include subtitulo;
+  }
+
+  /*Estilo para los parrafos */
+
+  .parr{
+    @include parrafo;
+  }
+
+/*nav*/
+
+    #nav{
+        padding: 40px;
+        font-size: 20px;
+        background-color: $colorprincipal;
+        
+        #inicio:hover{
+            
+            color: $colorderesalto;
+
+        }
+        #pr:hover{
+            
+            color: $colorderesalto;
+
+        }
+        #tien:hover{
+            
+            color: $colorderesalto;
+
+        }
+        #somos:hover{
+            
+            color: $colorderesalto;
+
+        }
+        #contact:hover{
+            
+            color: $colorderesalto;
+
+        }
+
+    }
+
+    /*botón productos */
+    #productos{
+        @include boton;
+    }
+
+        
+    //logo
+        #logo {
+            max-width: 100px; /* Ancho máximo del logo */
+            height: auto; /* Altura automática para mantener la proporción */
+        }
+
+
+/*video*/
+.video {
+    margin-top: 20px; 
+}
+
+
+
+
+
+
+//footer
+.footer{
+    background-color: $backgroundcolor ;
+    display: flex;
+    justify-content: space-between;
+    margin-top: 100px;
+    padding: 22px;
+    align-items: center;
+    text-align: center;
+
+    #divfoot{
+        #logofoot{
+        width: 40px;
+        display: inline-block;
+        vertical-align: middle;
+    }
+      p{
+        display: inline-block;
+        vertical-align: middle;
+        margin: 0;
+    }  
+    #mail{
+        color: #B85C38;
+       
+        &:visited, a:link{
+            color: #B85C38;
+            margin: 0 10px;
+        }
+        
+        &:hover{
+            color:#5C3D2E;
+        }
+
+    }
+    }
+    .social{
+    
+    align-items: flex-end;
+    font-size: 24px;
+    padding: 10px;
+    letter-spacing: 2px;
+    word-spacing: 20px;
+    
+    a:visited, a:link{
+    color: #B85C38;
+    margin: 0 10px;
+}
+
+a:hover{
+    color:#5C3D2E;
+}
+}
+}
+
+
+//estilos para el formulario de contacto
+
+#contacto{
+    text-align: justify;
+    font-family: $tipotextotitulo;
+    color: $colortexto ;
+    font-weight: $fontweight;
+    font-size: $sizetitulo;
+}
+#croquis{
+ margin-top: 50px;   
+}
+
+.header {
+    color:#5C3D2E;
+    font-size: 27px;
+    padding: 20px;
+   
+}
+
+.bigicon {
+    font-size: 20px;
+    color: $colorderesalto;
+}
+
+#enviar{
+    @include boton;
+}
+
+//estilos para el quienes somos
+
+
+#quienessomos1{
+    text-align: justify;
+}
+
+#quienessomos2{
+    text-align: justify;
+}
+
+#titulosomos{
+    @include titulo();
+}
+
+#aceitediv{
+    width: 300px; /* Ajusta el ancho según tus necesidades */
+    margin: 50px auto; /* Centrar el contenedor */
+    border: 2px solid #333; /* Color y grosor del borde */
+    box-shadow: 5px 5px 10px #888; /* Sombra: offsetX offsetY blurRadius color */
+
+    #imgaceite{
+        width: 100%; /* Ajusta el ancho para que la imagen se ajuste al contenedor */
+        display: block; /* Eliminar espacio adicional debajo de la imagen */
+    }
+}
+
+//estilos productos
+#products{
+    margin-top: 10%;
+}
+
+#products2{
+    margin-top: 5%;
+}
+
+
+#tituloproductos{
+    @include titulo();
+}
+
+.comprar{
+   
+    @include boton();
+}
+
+//estilos tienda
+
+
+
+
+
+
+
+// Media queries para hacer el sitio responsive
+
+/*pantallas menores que 768px */
+
+@media screen and (max-width: 768px) {
+    body {
+        font-size: 14px;
+    }
+
+    #titulo {
+        font-size: 30px; 
+        
+    }
+
+    #subtitulo {
+        font-size: 25px; 
+    }
+
+    .parr {
+        font-size: 16px; 
+    }
+
+    img {
+        max-width: 100%;
+        height: auto;
+    }
+
+    #nav {
+        padding: 10px; /* Reduce el espacio en la barra de navegación */
+        flex: 5 1 auto;
+    }
+
+    /* footer */
+
+    .footer {
+        flex-direction: column; /* Cambia la dirección de flex para dispositivos móviles */
+        text-align: center; /* Centra el texto en dispositivos móviles */
+        padding: 10px;
+    }
+    
+    .social {
+        margin-top: 10px; /* Ajusta el espacio entre las redes sociales y el texto del footer */
+    }
+}
+
+/* nav */
+.navbar-nav {
+    flex-direction: column;
+ }
+ .nav-item {
+    text-align: center; /* Alinear el texto al centro si es necesario */
+ }
+
+ .navbar-nav {
+    margin-top: 10px; /* Ajustar el margen superior según sea necesario */
+ }
+ .nav-link {
+    padding: 10px; /* Ajustar el relleno según sea necesario */
+ }
+
+
+
+
+
+
+
+
+
+
